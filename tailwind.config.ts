@@ -65,25 +65,69 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        wave: {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "10%, 30%": { transform: "rotate(14deg)" },
+          "20%, 40%": { transform: "rotate(-8deg)" },
+          "50%": { transform: "rotate(14deg)" },
+          "60%": { transform: "rotate(0deg)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: "0", transform: "translateX(30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        slideDown: {
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        morph: {
+          "0%": { borderRadius: "60% 40% 50% 50% / 60% 50% 50% 40%" },
+          "20%": { borderRadius: "50% 50% 40% 60% / 50% 60% 40% 50%" },
+          "40%": { borderRadius: "40% 60% 50% 50% / 40% 50% 50% 60%" },
+          "60%": { borderRadius: "50% 50% 60% 40% / 50% 40% 60% 50%" },
+          "80%": { borderRadius: "55% 45% 45% 55% / 55% 55% 45% 45%" },
+          "100%": { borderRadius: "60% 40% 50% 50% / 60% 50% 50% 40%" },
+        },
+        blob: {
+          "0%, 100%": { transform: "scale(1) rotate(0deg)" },
+          "50%": { transform: "scale(1.01) rotate(1deg)" },
+        },
+        "bounce-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        wave: "wave 2s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
+        fadeInUp: "fadeInUp 1s ease-out",
+        fadeInLeft: "fadeInLeft 1s ease-out",
+        fadeInRight: "fadeInRight 1s ease-out",
+        slideDown: "slideDown 0.8s ease-out",
+        morph: "morph 12s ease-in-out infinite",
+        blob: "blob 10s ease-in-out infinite",
+        "bounce-slow": "bounce-slow 2s ease-in-out infinite",
       },
     },
   },
