@@ -13,7 +13,20 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
+        // Custom color palette
+        'dark-bg': '#0a0a0a',
+        'dark-secondary': '#1a1a1a',
+        'dark-tertiary': '#2a2a2a',
+        'text-primary': '#e0e0e0',
+        'text-secondary': '#a0a0a0',
+        'accent': '#ff6b35',
+        'accent-hover': '#ff8555',
+        // Keep shadcn colors for components
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -34,10 +47,6 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
