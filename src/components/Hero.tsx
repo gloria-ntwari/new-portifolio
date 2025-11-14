@@ -33,32 +33,32 @@ const Hero = () => {
 
           {/* Content */}
           <div className="flex-1 text-center lg:text-left animate-fadeInUp">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-foreground">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-3 text-foreground">
               Irasubiza
               <br />
               Ntwari Gloria
-              <span className="animate-wave ml-2 md:ml-4">👋</span>
+              <span className="animate-wave ml-2">👋</span>
             </h1>
 
-            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
+              <div className="h-px w-10 bg-primary"></div>
+              <h2 className="text-base sm:text-lg md:text-xl font-medium text-foreground">
                 Software Engineer
               </h2>
             </div>
 
-            <p className="text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               I am a passionate software engineer with expertise in building
               modern web applications. I love turning ideas into reality through
               clean application.
             </p>
 
             <Button
-              size="lg"
-              className="bg-secondary hover:bg-secondary/80 text-foreground font-medium px-8 py-6 text-base sm:text-lg transition-all duration-300 hover:scale-105 group"
+              size="default"
+              className="bg-secondary hover:bg-secondary/80 text-foreground font-medium px-6 py-2 text-sm sm:text-base transition-all duration-300 hover:scale-105 group"
             >
               Say Hello
-              <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
             </Button>
 
             {/* Mobile Social Links */}
@@ -78,9 +78,9 @@ const Hero = () => {
 
           {/* Profile Image */}
           <div className="relative animate-fadeInRight animation-delay-400">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/10 animate-morph blur-2xl"></div>
-              <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-border/30 animate-morph shadow-2xl">
+            <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/10 animate-morph blur-xl"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-border/30 animate-morph shadow-2xl">
                 <img
                   src={profileImage}
                   alt="Gloria Profile"
