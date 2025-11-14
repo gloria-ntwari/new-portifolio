@@ -9,12 +9,17 @@ const Hero = () => {
     { icon: Instagram, href: "#", label: "Instagram" },
   ];
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-20 md:pt-0 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen flex items-center justify-center pt-20 md:pt-0 px-2 sm:px-4"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Social Links */}
           <div className="hidden lg:flex flex-col space-y-6 animate-fadeInLeft">
@@ -48,9 +53,9 @@ const Hero = () => {
             </div>
 
             <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              I am a passionate software engineer with expertise in building
-              modern web applications. I love turning ideas into reality through
-              clean application.
+              I am a passionate software engineer with expertise in<br />
+              building modern web applications. I love turning<br />
+              ideas into reality through clean application.
             </p>
 
             <Button
@@ -92,10 +97,19 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center animate-bounce-slow">
-          <MousePointer className="mx-auto mb-2 text-muted-foreground" size={24} />
-          <p className="text-sm text-muted-foreground font-medium">Scroll Down</p>
-        </div>
+        <button 
+          onClick={scrollToAbout}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center animate-bounce-slow cursor-pointer hover:opacity-80 transition-opacity flex flex-col items-center gap-2 group"
+          aria-label="Scroll to About section"
+        >
+          <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
+          </div>
+          <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
+            Scroll Down
+            <span className="group-hover:translate-y-1 transition-transform">↓</span>
+          </p>
+        </button>
       </div>
     </section>
   );
