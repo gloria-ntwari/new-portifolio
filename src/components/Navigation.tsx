@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -8,16 +9,17 @@ const Navigation = () => {
     { name: "Home", href: "#home", active: true },
     { name: "About", href: "#about", active: false },
     { name: "Skills", href: "#skills", active: false },
-    { name: "Portfolio", href: "#portfolio", active: false },
+    { name: "Qualification", href: "#qualification", active: false },
+    { name: "Portifolio", href: "#contact", active: false },
     { name: "Contact", href: "#contact", active: false },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border animate-slideDown">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-28">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="text-xl md:text-2xl font-bold text-foreground">
+          <div className="text-xl md:text-base font-medium text-foreground">
             Gloria
           </div>
 
@@ -27,7 +29,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-sm lg:text-base font-medium transition-colors hover:text-primary ${
+                className={`text-sm lg:text-[0.95rem] font-medium transition-colors hover:text-primary ${
                   item.active ? "text-primary" : "text-foreground"
                 }`}
               >

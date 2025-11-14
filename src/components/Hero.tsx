@@ -1,6 +1,6 @@
 import { Linkedin, Github, Instagram, Send, MousePointer } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImage from "@/assets/profile.png";
+import profile from '../assets/profile.jpg';
 
 const Hero = () => {
   const socialLinks = [
@@ -60,7 +60,7 @@ const Hero = () => {
 
             <Button
               size="default"
-              className="bg-secondary hover:bg-secondary/80 text-foreground font-medium px-6 py-2 text-sm sm:text-base transition-all duration-300 hover:scale-105 group"
+              className="bg-secondary hover:bg-secondary/80 text-foreground font-medium px-6 py-8 text-sm sm:text-base transition-all duration-300 hover:scale-105 group rounded-xl"
             >
               Say Hello
               <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
@@ -85,11 +85,11 @@ const Hero = () => {
           <div className="relative animate-fadeInRight animation-delay-400">
             <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px]">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/10 animate-morph blur-xl"></div>
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-border/30 animate-morph shadow-2xl">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-border/30 animate-morph shadow-2xl animate-fadeInLeft animation-delay-800">
                 <img
-                  src={profileImage}
+                  src={profile}
                   alt="Gloria Profile"
-                  className="w-full h-full object-cover animate-float"
+                  className="w-full h-full object-cover transition-all duration-500 hover:grayscale-0 grayscale"
                 />
               </div>
             </div>

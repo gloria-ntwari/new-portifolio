@@ -59,27 +59,38 @@ All colors MUST be HSL.
 
 /* Custom Animations */
 @keyframes wave {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
-  10%, 30% {
+
+  10%,
+  30% {
     transform: rotate(14deg);
   }
-  20%, 40% {
+
+  20%,
+  40% {
     transform: rotate(-8deg);
   }
+
   50% {
     transform: rotate(14deg);
   }
+
   60% {
     transform: rotate(0deg);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -90,6 +101,7 @@ All colors MUST be HSL.
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -101,6 +113,7 @@ All colors MUST be HSL.
     opacity: 0;
     transform: translateX(-30px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -112,6 +125,7 @@ All colors MUST be HSL.
     opacity: 0;
     transform: translateX(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -123,6 +137,7 @@ All colors MUST be HSL.
     transform: translateY(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -130,21 +145,27 @@ All colors MUST be HSL.
 }
 
 @keyframes morph {
+
   0% {
     border-radius: 60% 40% 50% 50% / 60% 50% 50% 40%;
   }
+
   20% {
     border-radius: 50% 50% 40% 60% / 50% 60% 40% 50%;
   }
+
   40% {
     border-radius: 40% 60% 50% 50% / 40% 50% 50% 60%;
   }
+
   60% {
     border-radius: 50% 50% 60% 40% / 50% 40% 60% 50%;
   }
+
   80% {
     border-radius: 55% 45% 45% 55% / 55% 55% 45% 45%;
   }
+
   100% {
     border-radius: 60% 40% 50% 50% / 60% 50% 50% 40%;
   }
@@ -179,27 +200,12 @@ All colors MUST be HSL.
 }
 
 .animate-morph {
-  animation: morph 12s ease-in-out infinite, blob 10s ease-in-out infinite;
+  animation: morph 12s ease-in-out infinite;
+  border: 8px solid rgba(99, 98, 98, 0.3);
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease-out;
-}
-
-.animate-fadeInLeft {
-  animation: fadeInLeft 1s ease-out;
-}
-
-.animate-fadeInRight {
-  animation: fadeInRight 1s ease-out;
-}
-
-.animate-slideDown {
-  animation: slideDown 0.8s ease-out;
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 2s ease-in-out infinite;
+.animate-blob {
+  animation: blob 10s ease-in-out infinite;
 }
 
 .animation-delay-200 {

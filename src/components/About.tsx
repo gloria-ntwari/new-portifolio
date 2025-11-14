@@ -1,6 +1,6 @@
 import { Award, Briefcase, Headphones, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import aboutImage from "@/assets/about.png";
+import aboutImage from '../assets/profile.jpg';
 
 const About = () => {
   const stats = [
@@ -31,11 +31,11 @@ const About = () => {
           <div className="h-1 w-16 bg-accent mx-auto"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-28">
           {/* Profile Image */}
           <div className="relative animate-fadeInLeft w-full lg:w-auto flex justify-center lg:justify-start">
-            <div className="relative w-[280px] h-[350px] sm:w-[320px] sm:h-[400px]">
-              <div className="w-full h-full rounded-2xl overflow-hidden border-4 border-dark-secondary shadow-2xl">
+            <div className="relative w-[280px] h-[450px] sm:w-[320px] sm:h-[400px] ">
+              <div className="w-full h-full rounded-2xl overflow-hidden border-4 border-dark-secondary shadow-2xl grayscale hover:grayscale-0">
                 <img
                   src={aboutImage}
                   alt="About Gloria"
@@ -48,11 +48,11 @@ const About = () => {
           {/* Content */}
           <div className="flex-1 animate-fadeInRight">
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 px-8">
               {stats.map((stat, index) => (
                 <div
                   key={stat.title}
-                  className="bg-dark-secondary p-4 rounded-lg border border-dark-tertiary hover:border-accent/50 transition-all duration-300 text-center"
+                  className="bg-dark-secondary p-6  rounded-lg border border-dark-tertiary hover:border-accent/50 transition-all duration-300 text-center"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <stat.icon className="w-6 h-6 text-accent mx-auto mb-2" />
@@ -65,18 +65,22 @@ const About = () => {
             </div>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-text-secondary mb-6 leading-relaxed">
-              As a developer, I endeavor to listen, motivate, think creatively and delegate together with my teammates to achieve product delivery. I specialize in making performant and good-looking web interfaces using frameworks like: NextJs (Typescript) ReactJs and React-Native.
+            <p className="text-sm sm:text-base text-text-secondary mb-6 leading-relaxed px-8">
+              As a developer, I endeavor to listen, motivate, think creatively and delegate together with my teammates to achieve product delivery. I specialize in<br></br>  making performant and good-looking web interfaces using<br></br> frameworks like: NextJs (Typescript) ReactJs and React-Native.
             </p>
 
             {/* Download CV Button */}
-            <Button
+            <div className="px-8">
+                          <Button
               size="default"
-              className="bg-dark-secondary hover:bg-dark-tertiary text-text-primary font-medium px-6 py-2 text-sm sm:text-base transition-all duration-300 hover:scale-105 group border border-dark-tertiary"
+              className="bg-dark-secondary hover:bg-dark-tertiary text-text-primary font-medium px-6 py-8 text-sm sm:text-base transition-all duration-300 hover:scale-105 group border border-dark-tertiary rounded-xl"
             >
               Download CV
               <Download className="ml-2 group-hover:translate-y-1 transition-transform" size={18} />
             </Button>
+
+            </div>
+
           </div>
         </div>
       </div>
