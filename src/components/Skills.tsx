@@ -59,10 +59,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-dark-bg overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-dark-bg overflow-hidden"
     >
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fadeInUp">
+        <div className="text-center mb-12 animate-fadeInUp">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-text-primary mb-3">
             Skills
           </h2>
