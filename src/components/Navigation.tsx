@@ -1,18 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
-    { name: "Home", href: "#home", active: true },
-    { name: "About", href: "#about", active: false },
-    { name: "Skills", href: "#skills", active: false },
-    { name: "Qualification", href: "#qualification", active: false },
-    { name: "Portifolio", href: "#projects", active: false },
-    { name: "Contact", href: "#contact", active: false },
+    { name: "Home", href: "#home", id: "home" },
+    { name: "About", href: "#about", id: "about" },
+    { name: "Skills", href: "#skills", id: "skills" },
+    { name: "Qualification", href: "#qualification", id: "qualification" },
+    { name: "Portifolio", href: "#projects", id: "projects" },
+    { name: "Contact", href: "#contact", id: "contact" },
   ];
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    navItems.forEach((item) => {
+      const element = document.getElementById(item.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border animate-slideDown">
@@ -29,9 +60,8 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-sm lg:text-[0.95rem] font-medium transition-colors hover:text-primary ${
-                  item.active ? "text-primary" : "text-foreground"
-                }`}
+                className={`text-sm lg:text-[0.95rem] font-medium transition-colors hover:text-accent ${activeSection === item.id ? "text-accent" : "text-foreground"
+                  }`}
               >
                 {item.name}
               </a>
@@ -55,9 +85,8 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`text-base font-medium transition-colors hover:text-primary ${
-                    item.active ? "text-primary" : "text-foreground"
-                  }`}
+                  className={`text-base font-medium transition-colors hover:text-accent ${activeSection === item.id ? "text-accent" : "text-foreground"
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

@@ -26,19 +26,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@example.com",
-      link: "mailto:hello@example.com",
+      value: "gloriantwari@gmail.com",
+      link: "mailto:gloriantwari@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+250 792 599 402",
+      link: "tel:+250792599402",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Kigali, Rwanda",
       link: "#",
     },
   ];
@@ -61,23 +61,22 @@ const Contact = () => {
           <div className="animate-fadeInUp">
             <div className="bg-dark-secondary border border-dark-tertiary rounded-2xl p-8 space-y-6 h-full">
               <div>
-                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-2">Address</h4>
-                <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
-                  123 Main Street<br />
-                  Suite Name, Kentucky 39495
+                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-2 lg:text-[1.1rem]">Address</h4>
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-4 line-clamp-2 lg:text-sm">
+                  Kigali, Rwanda
                 </p>
               </div>
 
               <div className="border-t border-dark-tertiary pt-6">
-                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-3">Contact</h4>
+                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-3 lg:text-[1.1rem]">Contact</h4>
                 <div className="space-y-2">
                   {contactInfo.map((item, index) => (
                     <a
                       key={index}
                       href={item.link}
-                      className="flex items-center gap-3 text-sm sm:text-base text-text-secondary hover:text-accent transition-colors"
+                      className="flex items-center gap-3 text-sm sm:text-base text-text-secondary hover:text-accent transition-colors lg:text-sm"
                     >
-                      <item.icon className="w-4 h-4 text-accent" />
+                      <item.icon className="w-3.5 h-3.5 text-accent" />
                       <span>{item.value}</span>
                     </a>
                   ))}
@@ -85,23 +84,23 @@ const Contact = () => {
               </div>
 
               <div className="border-t border-dark-tertiary pt-6">
-                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-2">Open Time</h4>
-                <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
+                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-2 lg:text-[1.1rem]">Open Time</h4>
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed lg:text-sm">
                   Monday - Friday : 09:00 - 20:00<br />
                   Saturday - Sunday : 09:00 - 21:00
                 </p>
               </div>
 
               <div className="border-t border-dark-tertiary pt-6">
-                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-3">Stay Connected</h4>
+                <h4 className="text-base sm:text-lg font-medium text-text-primary mb-3 lg:text-[1.1rem]">Stay Connected</h4>
                 <div className="flex gap-3">
-                  <a href="#" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
+                  <a href="mailto:gloriantwari@gmail.com" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
                     <Mail className="w-4 h-4 text-accent group-hover:text-white" />
                   </a>
-                  <a href="#" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
+                  <a href="tel:+250792599402" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
                     <Phone className="w-4 h-4 text-accent group-hover:text-white" />
                   </a>
-                  <a href="#" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
+                  <a href="https://maps.google.com/?q=Kigali,Rwanda" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
                     <MapPin className="w-4 h-4 text-accent group-hover:text-white" />
                   </a>
                 </div>
@@ -112,7 +111,7 @@ const Contact = () => {
           {/* Contact Form - Right Side (No Card) */}
           <div className="animate-fadeInUp animation-delay-200">
             <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-8">
-              Feel free to contact us any time. We will get back to you as soon as we can!
+              Feel free to contact me any time. I will get back to you as soon as I can!
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">

@@ -1,4 +1,4 @@
-import { Code2, Server, Database, Wrench, Component, Box, Layers, Wind, Radio, Cpu, Zap, FileCode, Warehouse, Container, GitBranch, Package, Cloud, Palette } from "lucide-react";
+import { Code2, Server, Database, Wrench, Component,  Layers, Wind, Radio, Cpu, Zap, FileCode, Warehouse, Container, GitBranch, Package, Cloud, Palette, Smartphone} from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface Skill {
@@ -19,8 +19,8 @@ const Skills = () => {
       icon: Code2,
       skills: [
         { name: "React", icon: Component },
-        { name: "Angular", icon: Box },
-        { name: "Vue.js", icon: Layers },
+        { name: "React Native", icon: Smartphone },
+        { name: "Next.js", icon: Layers },
         { name: "Tailwind CSS", icon: Wind },
       ],
     },
@@ -30,8 +30,8 @@ const Skills = () => {
       skills: [
         { name: "Node.js", icon: Radio },
         { name: "Python", icon: FileCode },
-        { name: "Rust", icon: Cpu },
-        { name: "PostgreSQL", icon: Zap },
+        { name: "Spring boot", icon: Cpu },
+        { name: "Nest.js", icon: Zap },
       ],
     },
     {
@@ -41,7 +41,7 @@ const Skills = () => {
         { name: "MongoDB", icon: Warehouse },
         { name: "MySQL", icon: Database },
         { name: "PostgreSQL", icon: Server },
-        { name: "Redis", icon: Zap },
+
       ],
     },
     {
@@ -50,7 +50,7 @@ const Skills = () => {
       skills: [
         { name: "Git", icon: GitBranch },
         { name: "Docker", icon: Container },
-        { name: "Kubernetes", icon: Cloud },
+        {name: "Postman", icon: FileCode},
         { name: "Figma", icon: Palette },
       ],
     },

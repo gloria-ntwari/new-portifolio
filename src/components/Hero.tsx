@@ -4,9 +4,9 @@ import profile from '../assets/profile.jpg';
 
 const Hero = () => {
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/ntwari-gloria", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/gloria-ntwari", label: "GitHub" },
+    { icon: Instagram, href: "https://www.instagram.com/gloria_ntwari/", label: "Instagram" },
   ];
 
   const scrollToAbout = () => {
@@ -53,9 +53,10 @@ const Hero = () => {
             </div>
 
             <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              I am a passionate software engineer with expertise in<br />
-              building modern web applications. I love turning<br />
-              ideas into reality through clean application.
+
+              I am a passinate software engineer with skills in<br />
+              creating contemporary web platforms. I enjoy<br /> transforming
+              ideas into real products through neat,<br /> well-structured development.
             </p>
 
             <Button
@@ -96,10 +97,10 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <button 
+        {/* Scroll Indicator - Hidden on mobile and tablet, visible on PC */}
+        <button
           onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center animate-bounce-slow cursor-pointer hover:opacity-80 transition-opacity flex flex-col items-center gap-2 group"
+          className="hidden lg:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center animate-bounce-slow cursor-pointer hover:opacity-80 transition-opacity flex-col items-center gap-2 group"
           aria-label="Scroll to About section"
         >
           <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex items-start justify-center p-2">

@@ -15,35 +15,35 @@ const Qualification = () => {
     {
       title: "Software Engineering",
       subtitle: "Rwanda Coding Academy",
-      date: "2021 - 2024",
+      date: "2023 - 2026",
     },
     {
-      title: "O'Level education",
+      title: "Ordinary Level education",
       subtitle: "G.S.O Butare",
-      date: "2018 - 2021",
+      date: "2019 - 2023",
     },
     {
-      title: "Primary School",
+      title: "Primary Education",
       subtitle: "Ecole Etoile Rubengera",
-      date: "2012 - 2017",
+      date: "2013 - 2019",
     },
   ];
 
   const experienceData: QualificationItem[] = [
     {
       title: "Senior Frontend Developer",
-      subtitle: "Winnaz Ltd",
-      date: "2023 - Present",
+      subtitle: "Winnaz",
+      date: "2025",
     },
     {
       title: "Backend Developer",
-      subtitle: "Agura Ltd",
-      date: "2021 - 2023",
+      subtitle: "AGURA GROUP",
+      date: "2025 - Present",
     },
     {
       title: "Freelance Projects",
       subtitle: "Dreamize Africa",
-      date: "2020 - 2021",
+      date: "2024 - Present",
     },
   ];
 

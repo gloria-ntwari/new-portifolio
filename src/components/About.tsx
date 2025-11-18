@@ -7,12 +7,12 @@ const About = () => {
     {
       icon: Award,
       title: "Experience",
-      value: "3.5 years working",
+      value: "3+ years working",
     },
     {
       icon: Briefcase,
       title: "Completed",
-      value: "48+ projects",
+      value: "30+ projects",
     },
     {
       icon: Headphones,
@@ -66,7 +66,9 @@ const About = () => {
 
             {/* Description */}
             <p className="text-sm sm:text-base text-text-secondary mb-6 leading-relaxed px-8">
-              As a developer, I endeavor to listen, motivate, think creatively and delegate together with my teammates to achieve product delivery. I specialize in<br></br>  making performant and good-looking web interfaces using<br></br> frameworks like: NextJs (Typescript) ReactJs and React-Native.
+              As a developer, I strive to listen, inspire, think innovatively,<br/> and collaborate with my teammates to ensure successful product delivery. I focus on<br></br> 
+              building efficient and visually appealing web interfaces using<br></br> 
+              frameworks such as NextJs (Typescript), ReactJs, and React-Native.
             </p>
 
             {/* Download CV Button */}

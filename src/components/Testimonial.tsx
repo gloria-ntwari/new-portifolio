@@ -5,7 +5,6 @@ interface Testimonial {
   name: string;
   role: string;
   content: string;
-  image: string;
   rating: number;
 }
 
@@ -13,26 +12,23 @@ const Testimonials = () => {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "James Ribbon",
-      role: "CEO at TechCorp",
-      content: "Working with this developer was an absolute pleasure. Their attention to detail and technical expertise helped transform our vision into a beautiful, functional product. Highly recommended!",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+      name: "Jolie Princesse",
+      role: "FullStack Developer",
+      content: "Working with Gloria was an absolute pleasure. Her attention to detail and technical skill turned our idea into a polished, high-quality product. Truly outstanding work!",
       rating: 5
     },
     {
       id: 2,
-      name: "Douglas Warden",
-      role: "Product Manager",
-      content: "Exceptional work! The project was delivered on time and exceeded our expectations. Their problem-solving skills and dedication to quality made all the difference in our success.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+      name: "ISIMBI Hyguette",
+      role: "Frontend Developer",
+      content: "Exceptional results!The project was completed on time and went far beyond. Gloria's problem-solving ability and commitment to excellence made a major impact.",
       rating: 5
     },
     {
       id: 3,
-      name: "Lorenzo Carl",
-      role: "Designer",
-      content: "A true professional who brings creativity and technical excellence to every project. Their ability to translate design concepts into seamless code is remarkable. Would definitely work together again!",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+      name: "Danny Mike",
+      role: "AI/ML Engineer",
+      content: "A genuine professional who delivers creativity and technical clarity in every project. Gloria's talent for turning design concepts into smooth, reliable code is impressive. We would gladly collaborate again!",
       rating: 5
     }
   ];
@@ -50,14 +46,14 @@ const Testimonials = () => {
           <div className="h-1 w-16 bg-accent mx-auto" />
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
               className="animate-fadeInUp"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="relative h-full p-6 group">
+              <div className="relative h-full p-6 group flex flex-col">
                 {/* Star Rating */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -69,27 +65,18 @@ const Testimonials = () => {
                 </div>
 
                 {/* Testimonial Content */}
-                <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-text-secondary mb-6 flex-grow ">
                   {testimonial.content}
                 </p>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border border-border">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-text-primary font-medium text-sm">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-text-secondary text-xs">
-                      {testimonial.role}
-                    </p>
-                  </div>
+                <div className="">
+                  <h4 className="text-text-primary font-medium text-base">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-text-secondary text-xs">
+                    {testimonial.role}
+                  </p>
                 </div>
 
                 {/* Quote Icon */}

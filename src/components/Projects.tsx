@@ -2,6 +2,22 @@ import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import wheliez from "../assets/wheliez.png";
+import wheliez1 from "../assets/wheliez1.png";
+import wheliez2 from "../assets/wheliez2.png";
+import hollanda from "../assets/hollanda.png";
+import hollanda1 from "../assets/hollanda1.png";
+import hollanda2 from "../assets/hollanda2.png";
+import winnaz from "../assets/winnaz.png";
+import winnaz1 from "../assets/winnaz1.png";
+import winnaz2 from "../assets/winnaz2.png";
+import Agura from "../assets/Agura.png";
+import Agura1 from "../assets/Agura1.png";
+import aguraMobile1 from "../assets/aguraMobile.png";
+import equipment from "../assets/equipment.jpg";
+import medimeet from "../assets/medimeet.png";
+import medimeet1 from "../assets/medimeet1.png";
+import medimeet2 from "../assets/medimeet2.png";
 
 interface Project {
   id: number;
@@ -22,98 +38,96 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "TravelGram",
-      description: "Travel app to share photos and travel experiences with friends.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      title: "wheeliez",
+      description: "Snack brand website showcasing products, flavors, company story, and customer engagement features",
+      image: wheliez,
+      liveUrl: "https://wheeliez.vercel.app/",
+      githubUrl: "https://github.com/gloria-ntwari/Wheeliz.git",
       borderColor: "from-pink-500 to-rose-500",
-      fullDescription: "A complete platform for sharing travel experiences, allowing users to create albums, add photos, and share their adventures with the community.",
-      technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+      fullDescription: "A modern, dynamic website built for Wheeliez, presenting their snacks, product details, brand story, and interactive features that enhance customer connection and highlight Rwanda-based creativity.",
+      technologies: ["React", "Tailwind CSS"],
       gallery: [
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+        wheliez,
+        wheliez1,
+        wheliez2,
       ]
     },
     {
       id: 2,
-      title: "Tech News",
-      description: "Tech news portal to stay up-to-date in the technology world.",
-      image: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      title: "Hollanda",
+      description: "Corporate website showcasing Hollanda FairFoods’ products, team, mission, community impact, and services.",
+      image: hollanda,
+      liveUrl: "https://hollanda.vercel.app/",
+      githubUrl: "https://github.com/gloria-ntwari/Hollanda.git",
       borderColor: "from-blue-500 to-cyan-500",
-      fullDescription: "Complete tech news portal with categorization system, advanced search, and real-time notifications about the latest tech news.",
-      technologies: ["Vue.js", "Firebase", "TypeScript", "Material UI"],
+      fullDescription: "A comprehensive brand website built for Hollanda FairFoods, featuring product collections, company story, farmer empowerment initiatives, team profiles, blogs, and customer engagement tools presented in a modern layout.",
+      technologies: ["React", "Sanity", "TypeScript", "Tailwind CSS"],
       gallery: [
-        "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-        "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+        hollanda,
+        hollanda1,
+        hollanda2,
       ]
     },
     {
       id: 3,
-      title: "Recipe Page",
-      description: "Platform to discover and save culinary recipes from around the world.",
-      image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      title: "Winnaz",
+      description: "Product-focused website presenting Winnaz chips, flavors, brand story, team, and distributor details.",
+      image: winnaz,
+      liveUrl: "https://winnaz-web.netlify.app/",
+      githubUrl: "https://github.com/gloria-ntwari/Winnaz.git",
       borderColor: "from-yellow-500 to-orange-500",
       fullDescription: "A complete recipe app with ingredient search, favorite saving, and automatic shopping list creation features.",
-      technologies: ["React", "PostgreSQL", "Express", "Tailwind CSS"],
+      technologies: ["HTML", "CSS"],
       gallery: [
-        "https://images.unsplash.com/photo-1556910103-1c02745aae4d",
-        "https://images.unsplash.com/photo-1556909212-d5b604d0c90d",
-        "https://images.unsplash.com/photo-1556911220-bff31c812dba",
+        winnaz,
+        winnaz1,
+        winnaz2,
       ]
     },
     {
       id: 4,
-      title: "Zingas",
-      description: "Complete and simple karaoke office management system.",
-      image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      title: "Agura",
+      description: "Event ticketing platform offering seamless discovery, booking, venue interaction, and real-time updates.",
+      image: Agura,
+      liveUrl: "https://webapp-murex-eight.vercel.app/",
+      githubUrl: "https://github.com/AguraTix",
       borderColor: "from-orange-500 to-red-500",
-      fullDescription: "Management platform for karaoke offices with online scheduling, song catalog, and reservation system.",
-      technologies: ["Angular", "NestJS", "MySQL", "Bootstrap"],
+      fullDescription: "A modern event ticketing platform featuring easy ticket purchases, venue navigation, mobile app integration, client testimonials, FAQs, and smooth user experiences tailored for both organizers and attendees.",
+      technologies: ["React", "NodeJs", "TailWind CSS", "React Native"],
       gallery: [
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
-        "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae",
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
+        Agura,
+        Agura1,
+        aguraMobile1,
       ]
     },
     {
       id: 5,
-      title: "Reload",
-      description: "System for managing and tracking activities.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+      title: "MediMeet",
+      description: "MediMeet is a modern web application for booking doctor appointments. It features a Spring Boot backend and a React frontend with a sleek user interface.",
+      image: medimeet,
       liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/gloria-ntwari/MediMeet.git",
       borderColor: "from-green-500 to-teal-500",
-      fullDescription: "Productivity management system with task tracking, time management, and performance reporting.",
-      technologies: ["React", "Django", "PostgreSQL", "Tailwind CSS"],
+      fullDescription: "A modern web application for booking doctor appointments, using Spring Boot and React to provide seamless scheduling, intuitive interfaces, patient coordination, management, and real-time availability.",
+      technologies: ["React", "Spring Boot", "PostgreSQL", "Tailwind CSS"],
       gallery: [
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+        medimeet,
+        medimeet1,
+        medimeet2,
       ]
     },
     {
       id: 6,
-      title: "Fashion Store",
-      description: "Modern e-commerce platform for fashion products.",
-      image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      title: "Equipment_MS",
+      description: "Management of the equipment between the staff and the admin users in the institution",
+      image: equipment,
+      liveUrl: "",
+      githubUrl: "https://github.com/gloria-ntwari/Equipment_MS.git",
       borderColor: "from-purple-500 to-indigo-500",
-      fullDescription: "Complete e-commerce solution with shopping cart, payment integration, product management, and order tracking.",
-      technologies: ["Next.js", "Stripe", "Prisma", "Tailwind CSS"],
+      fullDescription: "A Java-based system for institutions that manages equipment tracking, assignments, and returns, giving administrators clear visibility, improving accountability, and ensuring smooth coordination between staff and management.",
+      technologies: ["Spring Boot", "TypeScript"],
       gallery: [
-        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d",
-        "https://images.unsplash.com/photo-1445205170230-053b83016050",
-        "https://images.unsplash.com/photo-1483985988355-763728e1935b",
+        equipment,
       ]
     }
   ];
@@ -151,12 +165,12 @@ const Projects = () => {
                 {/* Content */}
                 <div className="p-5">
                   {/* Title */}
-                  <h3 className="text-foreground text-lg font-semibold mb-2">
+                  <h3 className=" mb-2 text-lg font-medium">
                     {project.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-xs mb-4 line-clamp-2">
+                  <p className="text-sm text-text-secondary mb-4 line-clamp-2">
                     {project.description}
                   </p>
 

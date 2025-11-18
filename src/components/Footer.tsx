@@ -1,4 +1,4 @@
-import { Linkedin, Github, Twitter, ArrowUp } from "lucide-react";
+import { Linkedin, Github, Twitter, ArrowUp, Instagram } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -12,9 +12,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/ntwari-gloria", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/gloria-ntwari", label: "GitHub" },
+    { icon: Instagram, href: "https://www.instagram.com/gloria_ntwari/", label: "Instagram" },
   ];
 
   return (
