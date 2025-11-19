@@ -1,6 +1,6 @@
 import { Award, Briefcase, Headphones, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import aboutImage from '../assets/profile.jpg';
+import aboutImage from '../assets/profile.JPG';
 
 const About = () => {
   const stats = [

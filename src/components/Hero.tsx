@@ -1,6 +1,6 @@
 import { Linkedin, Github, Instagram, Send, MousePointer } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profile from '../assets/profile.jpg';
+import profile from "../assets/profile-temp.jpg";
 
 const Hero = () => {
   const socialLinks = [
