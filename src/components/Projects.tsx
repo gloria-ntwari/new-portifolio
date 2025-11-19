@@ -152,20 +152,21 @@ const Projects = () => {
               className="animate-fadeInUp"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative h-full bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-xl overflow-hidden border border-border transition-all duration-300 hover:border-accent/30 group">
+              <div className="relative h-full bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-xl overflow-hidden border border-border transition-all duration-300 hover:border-accent/30 hover-lift group">
                 {/* Image */}
-                <div className="aspect-video w-full overflow-hidden">
+                <div className="aspect-video w-full overflow-hidden relative">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
                 {/* Content */}
                 <div className="p-5">
                   {/* Title */}
-                  <h3 className=" mb-2 text-lg font-medium">
+                  <h3 className="mb-2 text-lg font-medium group-hover:text-accent transition-colors duration-300">
                     {project.title}
                   </h3>
 
@@ -199,10 +200,11 @@ const Projects = () => {
                   {/* View More Button */}
                   <Button
                     size="sm"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-xs"
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-xs relative overflow-hidden group/btn"
                     onClick={() => setSelectedProject(project)}
                   >
-                    View More
+                    <span className="relative z-10">View More</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></div>
                   </Button>
                 </div>
               </div>

@@ -53,25 +53,27 @@ const Testimonials = () => {
               className="animate-fadeInUp"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="relative h-full p-6 group flex flex-col">
+              <div className="relative h-full p-6 group flex flex-col hover-lift bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-xl border border-border hover:border-accent/30 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 {/* Star Rating */}
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-4 relative z-10">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-accent text-accent"
+                      className="w-4 h-4 fill-accent text-accent transition-all duration-300 group-hover:scale-110 animate-scale-in"
+                      style={{ animationDelay: `${i * 50}ms` }}
                     />
                   ))}
                 </div>
 
                 {/* Testimonial Content */}
-                <p className="text-sm sm:text-base text-text-secondary mb-6 flex-grow ">
+                <p className="text-sm sm:text-base text-text-secondary mb-6 flex-grow relative z-10 group-hover:text-text-primary transition-colors duration-300">
                   {testimonial.content}
                 </p>
 
                 {/* Author Info */}
-                <div className="">
-                  <h4 className="text-text-primary font-medium text-base">
+                <div className="text-center relative z-10">
+                  <h4 className="text-text-primary font-medium text-base group-hover:text-accent transition-colors duration-300">
                     {testimonial.name}
                   </h4>
                   <p className="text-text-secondary text-xs">
@@ -80,7 +82,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Quote Icon */}
-                <Quote className="absolute top-0 right-0 w-8 h-8 text-accent/20" />
+                <Quote className="absolute top-4 right-4 w-8 h-8 text-accent/20 group-hover:text-accent/40 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
               </div>
             </div>
           ))}

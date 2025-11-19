@@ -1,4 +1,4 @@
-import { Code2, Server, Database, Wrench, Component,  Layers, Wind, Radio, Cpu, Zap, FileCode, Warehouse, Container, GitBranch, Package, Cloud, Palette, Smartphone} from "lucide-react";
+import { Code2, Server, Database, Wrench, Component, Layers, Wind, Radio, Cpu, Zap, FileCode, Warehouse, Container, GitBranch, Package, Cloud, Palette, Smartphone } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface Skill {
@@ -50,7 +50,7 @@ const Skills = () => {
       skills: [
         { name: "Git", icon: GitBranch },
         { name: "Docker", icon: Container },
-        {name: "Postman", icon: FileCode},
+        { name: "Postman", icon: FileCode },
         { name: "Figma", icon: Palette },
       ],
     },
@@ -77,29 +77,30 @@ const Skills = () => {
               style={{ animationDelay: `${categoryIndex * 150}ms` }}
             >
               {/* Category card with glassmorphism effect */}
-              <div className="relative h-full bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl p-6 border border-white/10 transition-all duration-500 hover:border-accent/50 hover:shadow-[0_0_30px_rgba(255,107,53,0.15)] hover:scale-[1.02] hover:-translate-y-1">
+              <div className="relative h-full bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-2xl p-6 border border-white/10 transition-all duration-500 hover:border-accent/50 hover:shadow-[0_0_30px_rgba(255,107,53,0.15)] hover-lift overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 {/* Category header with icon */}
-                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
-                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110">
-                    <category.icon className="w-6 h-6 text-accent" />
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10 relative z-10">
+                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <category.icon className="w-6 h-6 text-accent group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-medium text-text-primary">
+                  <h3 className="text-base sm:text-lg font-medium text-text-primary group-hover:text-accent transition-colors duration-300">
                     {category.title}
                   </h3>
                 </div>
 
                 {/* Skills list */}
-                <div className="space-y-4">
+                <div className="space-y-4 relative z-10">
                   {category.skills.map((skill, skillIndex) => (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-3 text-text-secondary hover:text-text-primary transition-all duration-300 group/skill cursor-pointer"
+                      className="flex items-center gap-3 text-text-secondary hover:text-text-primary transition-all duration-300 group/skill cursor-pointer animate-scale-in"
                       style={{ animationDelay: `${(categoryIndex * 150) + (skillIndex * 50)}ms` }}
                     >
-                      <div className="p-2 rounded-lg bg-white/5 group-hover/skill:bg-accent/10 transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:rotate-6">
+                      <div className="p-2 rounded-lg bg-white/5 group-hover/skill:bg-accent/10 transition-all duration-300 group-hover/skill:scale-125 group-hover/skill:rotate-12 hover-glow">
                         <skill.icon className="w-4 h-4 group-hover/skill:text-accent transition-colors duration-300" />
                       </div>
-                      <span className="text-sm font-medium group-hover/skill:translate-x-1 transition-transform duration-300">
+                      <span className="text-sm font-medium group-hover/skill:translate-x-2 transition-transform duration-300">
                         {skill.name}
                       </span>
                     </div>

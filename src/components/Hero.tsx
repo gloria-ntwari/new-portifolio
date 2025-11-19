@@ -27,7 +27,9 @@ const Hero = () => {
               <a
                 key={social.label}
                 href={social.href}
-                className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110 duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-125 hover:rotate-12 hover-glow"
                 aria-label={social.label}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
@@ -61,20 +63,25 @@ const Hero = () => {
 
             <Button
               size="default"
-              className="bg-secondary hover:bg-secondary/80 text-foreground font-medium px-6 py-8 text-sm sm:text-base transition-all duration-300 hover:scale-105 group rounded-xl"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-secondary hover:bg-secondary/80 text-foreground font-medium px-6 py-8 text-sm sm:text-base transition-all duration-300 hover:scale-105 hover-lift group rounded-xl relative overflow-hidden"
             >
-              Say Hello
-              <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              <span className="relative z-10">Say Hello</span>
+              <Send className="ml-2 relative z-10 group-hover:translate-x-1 group-hover:rotate-12 transition-all duration-300" size={18} />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
             </Button>
 
             {/* Mobile Social Links */}
             <div className="flex lg:hidden justify-center gap-6 mt-8">
-              {socialLinks.map((social) => (
+              {socialLinks.map((social, index) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110 duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-125 hover:rotate-12 hover-glow animate-scale-in"
                   aria-label={social.label}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <social.icon size={24} />
                 </a>
@@ -100,15 +107,14 @@ const Hero = () => {
         {/* Scroll Indicator - Hidden on mobile and tablet, visible on PC */}
         <button
           onClick={scrollToAbout}
-          className="hidden lg:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center animate-bounce-slow cursor-pointer hover:opacity-80 transition-opacity flex-col items-center gap-2 group"
+          className="hidden lg:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center cursor-pointer flex-col items-center gap-2"
           aria-label="Scroll to About section"
         >
           <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
+            <div className="w-1 h-2 bg-muted-foreground rounded-full"></div>
           </div>
-          <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
-            Scroll Down
-            <span className="group-hover:translate-y-1 transition-transform">↓</span>
+          <p className="text-sm text-muted-foreground font-medium">
+            Scroll Down ↓
           </p>
         </button>
       </div>

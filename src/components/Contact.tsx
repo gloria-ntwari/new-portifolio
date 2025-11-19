@@ -88,7 +88,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Contact Info Card - Left Side */}
           <div className="animate-fadeInUp">
-            <div className="bg-dark-secondary border border-dark-tertiary rounded-2xl p-8 space-y-6 h-full">
+            <div className="bg-dark-secondary border border-dark-tertiary rounded-2xl p-8 space-y-6 h-full hover-lift transition-all duration-300 hover:border-accent/30">
               <div>
                 <h4 className="text-base sm:text-lg font-medium text-text-primary mb-2 lg:text-[1.1rem]">Address</h4>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-4 line-clamp-2 lg:text-sm">
@@ -186,9 +186,10 @@ const Contact = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-dark-secondary hover:bg-dark-tertiary text-text-primary font-medium px-6 py-6 text-sm sm:text-base transition-all duration-300 border border-dark-tertiary rounded-xl uppercase tracking-wider hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-dark-secondary hover:bg-dark-tertiary text-text-primary font-medium px-6 py-6 text-sm sm:text-base transition-all duration-300 border border-dark-tertiary rounded-xl uppercase tracking-wider hover:scale-105 hover-lift disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
               >
-                {isSubmitting ? "SENDING..." : "SEND"}
+                <span className="relative z-10">{isSubmitting ? "SENDING..." : "SEND"}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
               </Button>
             </form>
           </div>

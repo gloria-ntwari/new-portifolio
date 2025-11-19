@@ -39,16 +39,17 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex gap-3">
-            {socialLinks.map((social) => (
+            {socialLinks.map((social, index) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-card border border-border hover:border-accent hover:bg-accent/10 flex items-center justify-center transition-all group"
+                className="w-10 h-10 rounded-lg bg-card border border-border hover:border-accent hover:bg-accent/10 flex items-center justify-center transition-all duration-300 group hover:scale-110 hover:rotate-12 hover-glow animate-scale-in"
                 aria-label={social.label}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
+                <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:scale-110 transition-all duration-300" />
               </a>
             ))}
           </div>
@@ -63,10 +64,10 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 w-12 h-12 rounded-lg bg-card border border-border hover:bg-accent hover:border-accent flex items-center justify-center transition-all shadow-lg group"
+        className="fixed bottom-6 right-6 w-12 h-12 rounded-lg bg-card border border-border hover:bg-accent hover:border-accent flex items-center justify-center transition-all duration-300 shadow-lg group hover:scale-110 hover-lift hover-glow animate-bounce-slow"
         aria-label="Scroll to top"
       >
-        <ArrowUp className="w-5 h-5 text-muted-foreground group-hover:text-accent-foreground transition-colors" />
+        <ArrowUp className="w-5 h-5 text-muted-foreground group-hover:text-accent-foreground group-hover:-translate-y-1 transition-all duration-300" />
       </button>
     </footer>
   );
