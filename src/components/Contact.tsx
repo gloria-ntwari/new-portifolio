@@ -11,15 +11,44 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdkbeddv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -94,13 +123,13 @@ const Contact = () => {
               <div className="border-t border-dark-tertiary pt-6">
                 <h4 className="text-base sm:text-lg font-medium text-text-primary mb-3 lg:text-[1.1rem]">Stay Connected</h4>
                 <div className="flex gap-3">
-                  <a href="mailto:gloriantwari@gmail.com" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
+                  <a href="mailto:gloriantwari@gmail.com" className="w-8 h-8 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
                     <Mail className="w-4 h-4 text-accent group-hover:text-white" />
                   </a>
-                  <a href="tel:+250792599402" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
+                  <a href="tel:+250792599402" className="w-8 h-8 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
                     <Phone className="w-4 h-4 text-accent group-hover:text-white" />
                   </a>
-                  <a href="https://maps.google.com/?q=Kigali,Rwanda" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
+                  <a href="https://maps.google.com/?q=Kigali,Rwanda" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-accent/10 hover:bg-accent flex items-center justify-center transition-colors group">
                     <MapPin className="w-4 h-4 text-accent group-hover:text-white" />
                   </a>
                 </div>
@@ -117,42 +146,49 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <Input
                 type="text"
+                name="name"
                 placeholder="Name"
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
                 required
+                disabled={isSubmitting}
                 className="bg-transparent border-b border-dark-tertiary rounded-none text-text-primary placeholder:text-text-secondary h-12 pl-4 "
               />
 
               <Input
                 type="email"
+                name="email"
                 placeholder="Email"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
                 required
+                disabled={isSubmitting}
                 className="bg-transparent border-b border-dark-tertiary rounded-none text-text-primary placeholder:text-text-secondary h-12 pl-4 "
               />
 
               <Textarea
+                name="message"
                 placeholder="Message"
                 value={formData.message}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
                 required
+                disabled={isSubmitting}
                 rows={4}
                 className="bg-transparent border-b border-dark-tertiary rounded-none text-text-primary placeholder:text-text-secondary resize-none pl-4 pt-3"
               />
 
               <Button
                 type="submit"
-                className="w-full bg-dark-secondary hover:bg-dark-tertiary text-text-primary font-medium px-6 py-6 text-sm sm:text-base transition-all duration-300 border border-dark-tertiary rounded-xl uppercase tracking-wider hover:scale-105"
+                disabled={isSubmitting}
+                className="w-full bg-dark-secondary hover:bg-dark-tertiary text-text-primary font-medium px-6 py-6 text-sm sm:text-base transition-all duration-300 border border-dark-tertiary rounded-xl uppercase tracking-wider hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                SEND
+                {isSubmitting ? "SENDING..." : "SEND"}
               </Button>
             </form>
           </div>
